@@ -4,8 +4,11 @@
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
+    "@lalitwagh/medium-blog-common": "^1.0.1",
+    "@lalitwagh/medium-common": "^1.0.1",
     "@prisma/client": "^5.10.2",
     "@prisma/extension-accelerate": "^1.0.0",
+    "@types/node": "^20.11.24",
     "hono": "^4.0.8",
     "prisma": "^5.10.2"
   },
