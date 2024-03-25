@@ -4,6 +4,7 @@ import { SignupBody } from "@lalitwagh/medium-blog-common"
 import axios from "axios"
 import { BACKEND_URL } from "../config"
 import { useNavigate } from "react-router-dom"
+
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
     const navigate = useNavigate();
     const [postInputs, setPostInputs] = useState<SignupBody>({
@@ -21,7 +22,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
 
         }catch(err){
             console.log(err);
-            alert("err")
+            alert("Error while signing up")
         }
     }
     return <div className="h-screen flex justify-center flex-col">
@@ -71,9 +72,6 @@ interface LabelledInput {
     type?:string
 }
 function LabelInput({ label, placeholder, onChange ,type}: LabelledInput) {
-
-
-
     return <div>
         <label className="block mb-2 text-sm font-semibold text-gray-900 dark:text-black pt-4">{label}</label>
         <input onChange={onChange} type={type || "text"} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder={placeholder} required />
